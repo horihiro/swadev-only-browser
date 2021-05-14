@@ -5,13 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "swa": "swa"
   },
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@azure/static-web-apps-cli": "^0.4.0",
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
