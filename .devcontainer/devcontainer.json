@@ -2,12 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/javascript-node
 {
 	"name": "Node.js",
-	"image": "mcr.microsoft.com/azure-functions/node:3.0-node12-core-tools",
-	// "build": {
-	// 	"dockerfile": "Dockerfile",
-	// 	// Update 'VARIANT' to pick a Node version: 12, 14, 16
-	// 	"args": { "VARIANT": "14" }
-	// },
+	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
@@ -25,6 +20,8 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "",
+	
+	"postCreateCommand": "curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && sudo sh -c 'echo \"deb [arch=amd64] https://packages.microsoft.com/debian/$(lsb_release -rs | cut -d'.' -f 1)/prod $(lsb_release -cs) main\" > /etc/apt/sources.list.d/dotnetdev.list' && sudo apt-get update && sudo apt-get install -y azure-functions-core-tools-3",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"
