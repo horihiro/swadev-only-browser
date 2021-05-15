@@ -43,9 +43,9 @@
       }
     },
     {
-      "type": "func",
+      "type": "shell",
       "label": "func start",
-      "command": "host start",
+      "command": "func host start --language-worker -- \"--inspect=9229\"",
       "problemMatcher": "$func-watch",
       "isBackground": true,
       "dependsOn": "npm install api",
