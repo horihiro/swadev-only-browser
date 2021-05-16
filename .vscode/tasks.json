@@ -13,7 +13,7 @@
         },
         "background": {
           "activeOnStart": true,
-          "beginsPattern": "^.Using dev server for static content*$",
+          "beginsPattern": "^.*Using dev server for static content .*$",
           "endsPattern": "^.*Azure Static Web Apps emulator started.*$"
         }
       },
@@ -46,7 +46,17 @@
       "type": "shell",
       "label": "func start",
       "command": "func host start --language-worker -- \"--inspect=9229\"",
-      "problemMatcher": "$func-watch",
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*(Job host stopped|signaling restart).*$",
+          "endsPattern": "^.*(Worker process started and initialized|Host lock lease acquired by instance ID).*$"
+        }
+      },
       "isBackground": true,
       "dependsOn": "npm install api",
       "options": {
