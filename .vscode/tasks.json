@@ -29,14 +29,14 @@
       "type": "shell",
       "label": "npm run build",
       "command": "npm run build",
-      "dependsOn": "npm install app",
+      "dependsOn": "npm install (for app)",
       "options": {
         "cwd": "${workspaceFolder}"
       }
     },
     {
       "type": "shell",
-      "label": "npm install app",
+      "label": "npm install (for app)",
       "command": "npm install",
       "options": {
         "cwd": "${workspaceFolder}"
@@ -58,14 +58,14 @@
         }
       },
       "isBackground": true,
-      "dependsOn": "npm install api",
+      "dependsOn": "npm install (for api)",
       "options": {
         "cwd": "${workspaceFolder}/api"
       }
     },
     {
       "type": "shell",
-      "label": "npm install api",
+      "label": "npm install (for api)",
       "command": "npm install",
       "options": {
         "cwd": "${workspaceFolder}/api"
