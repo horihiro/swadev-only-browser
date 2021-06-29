@@ -22,5 +22,8 @@
         "redirect": "/login",
         "statusCode": 302
       }
+    },
+    "globalHeaders": {
+      "referrer-policy": "strict-origin-when-cross-origin"
     }
   }
